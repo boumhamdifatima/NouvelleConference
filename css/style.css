@@ -1,0 +1,620 @@
+/********************************************************************
+**   Date : 21/02/2023                                             **
+**   Laboratoire 02 : HTML & CSS                                   **
+**   Site Web : NOUVELLE CONFÉRENCE                                **
+**   Membres de l'équipe de développement : Alla Condrea           **
+**                                        : Fatima Boumhamdi       **
+********************************************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+:root{
+    --cir-dark:rgb(46, 63, 81);
+    --cir-lessdark:rgb(86, 104, 123);
+    --cir-light: rgb(231, 236, 239);
+    --cir-accent: rgb(110, 128, 139);
+    --cir-active: rgb(177, 225, 253);
+    --cir-barcolor1: rgb(173, 218, 177);
+    --cir-barcolor2: rgb(236, 235, 204);
+    --cir-shadow : rgb(171, 167, 167);
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    font-family: 'Alegreya Sans', sans-serif;
+}
+a:hover, .adress a:hover, .header a p:hover {
+    color: rgb(118, 233, 220);
+}
+header, footer{
+    color: var(--cir-light);
+    background-color: var(--cir-dark);
+}
+.header, .footer {
+    width: 780px;   
+    height: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end; 
+}
+.item {
+    background-color: var(--cir-dark);
+    font-weight: 700;
+    color: var(--cir-accent);
+    text-align: center;
+}
+.item1 {
+    width:300px;
+    height: 150px;
+    font-size: 50px;
+    line-height: 43px;
+    padding: 30px 0;  
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    color: var(--cir-light);
+}
+.item2 {
+    width: 400px;
+    height: 70px;
+    padding: 5px 0;
+    line-height: 30px;
+    padding-top: 45px;
+    text-align: right;
+    font-size: 23px;
+    font-weight: 300;
+    padding-right: 5px;
+}
+.item3 {
+    width: 440px;
+    height: 70px;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    padding-top: 10px;
+}
+.item3 ul {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    gap: 8px;   
+}
+.item3 li, .footermenu li {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+header a, footer a {
+    color: var(--cir-light);
+}
+/*
+footer {
+    position:sticky;
+    bottom: 0;
+}
+*/
+.footer {
+    height: 120px;
+    font-size: 13px;
+    padding-top: 40px;
+    line-height: 50px;
+}
+.copyright {
+    color: var(--cir-accent);
+    font-weight: 400;
+}
+.footermenu {
+    width: 350px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.footermenu ul {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+}
+header li:hover, footer li:hover {
+    background-color: var(--cir-lessdark);
+  
+}
+.active {
+    color: var(--cir-active);
+}
+.programme, .conferenciers, .venuehtml, .inscription {
+    width: 780px;
+    min-width: 780px;
+    margin: 10px auto 30px auto;
+    border: 1px;
+    box-shadow: 10px 10px 20px 13px var(--cir-shadow);
+    
+}
+.soubarre {
+    height: 180px;
+    background-image: linear-gradient(to right, var(--cir-barcolor1), var(--cir-barcolor2) );
+    text-align: center;
+    padding: 20px;
+    /*color: rgb(220, 229, 227)*/
+    /*color: rgb(226, 228, 233);*/
+}
+.soubarre h1{
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 50px;
+    color: var(--cir-accent);
+    letter-spacing: -0.2px;
+    margin: 10px;
+}
+.soubarre p{
+    line-height: 25px;
+    font-size: 16px;
+    color: var(--cir-accent);
+    
+}
+.contenu, .location {
+    padding: 50px 20px;
+}
+table {
+    margin-bottom: 30px;
+    font-size: 13px;
+    border: none;
+    border-collapse: collapse;
+}
+th, .adress h2, .adress a, .conf-text h2 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    color: rgb(148, 178, 171);
+}
+td {
+    color: rgb(191, 191, 194);
+    font-weight: 400;
+    border-bottom: 1px solid lightgray;
+}
+tr {
+    vertical-align: top;
+    line-height: 16px;
+}
+td a, .contour-a a{
+    font-size: 16px;
+    color: rgb(148, 178, 171);
+    font-weight: 500;
+}
+th, td {
+    padding: 18px 10px;
+}
+table td:first-child {
+    text-align: right;
+    border-bottom: none;
+}
+table tr:last-child td{
+    border-bottom: none;
+}
+.location{
+    display: flex;
+    gap: 30px;
+}
+.adress {
+    width: 450px;
+}
+.carte {
+    width: 500px;
+}
+.adress a {
+    font-size: 15px;
+    text-decoration: underline;
+} 
+.adress p {
+    font-size: 15px;
+    color: rgb(191, 191, 194);
+    font-weight: 400;
+}
+.btn .buttonindex {
+    border: 1px solid #fff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: .5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+a.buttonindex {
+    box-sizing: border-box;
+}
+.btn {
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: .5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.btn-ins {
+    border: 0;
+    background: #648880;
+    padding: 11px 30px;
+    font-size: 14px;
+}
+.btn-ins:hover {
+    background: #77a198;
+    color: #adf7e7;
+}
+.buttonindex {
+    border: 1px solid #fff;
+    padding: 10px 30px;
+}
+.buttonindex:hover {
+    background: #fff;
+    color: #648880;
+}
+.form {
+    margin-left: 80px;
+}
+.enregistrement {
+    border: none;
+    padding: 0%;
+    margin-top: 10px;
+}
+.form,
+.achat {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.achat {
+    width: 350px;
+    font: inherit;
+    margin-left: 5%;
+    margin-bottom: 200px;
+}
+.achat li {
+    list-style: inside;
+    list-style: square;
+}
+.achat h2,
+h4 {
+    color: #648880;
+    font-weight: normal;
+}
+.achat ul,
+p {
+    color: #888;
+}
+.achat ul{
+    padding-left: 30px;
+}
+.achat h5 {
+    padding-top: 10px;
+    color: #a9b2b9;
+}
+.enregistrement textarea,
+.enregistrement text,
+.enregistrement input,
+.enregistrement select {
+    border: 1px solid #c6c9cc;
+    border-radius: 5px;
+    color: #888;
+    display: block;
+    margin: 5px 0 27px 0;
+    padding: 5px 8px;
+}
+.enregistrement ::placeholder {
+    color: #888;
+}
+.enregistrement textarea {
+    height: 78px;
+    margin-top: 10px;
+}
+.enregistrement label {
+    color: #648880;
+    cursor: pointer;
+}
+.form div{
+    display: flex;
+    justify-content: center;
+}
+.hero {
+    color: #fff;
+    line-height: 40px;
+    padding: 30px 0 60px 0;
+    text-align: center;
+    background: var(--cir-dark);
+}
+.bas {
+    width: 780px;
+    min-width: 780px;
+    margin: auto;
+}
+.hero h2 {
+    line-height: 44px;
+    color: var(--cir-accent);
+    font: inherit;
+    font-size: 200%;
+}
+.hero p {
+    color: #c6c9cc;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.accueil {
+    display: flex;
+    justify-content: space-between;
+    width: 780px;
+    min-width: 780px;
+    margin: 60px auto;
+}
+.field img {
+    border-radius: 2px;
+    display: block;
+    margin-bottom: 20px;
+    overflow: clip;
+    width: 100%;
+    margin-top: 30px;
+}
+.field {
+    display: inline-block;  
+    padding: 0%;
+    width: 240px;
+}
+.field p {
+    margin-bottom: 22px;
+    color: #888;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.field h5 {
+    color: #a9b2b9;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+.field h3 {
+    color: #648880;
+    font-weight: 400;
+}
+.field a:hover {
+    opacity: 0.5;
+    color: rgb(118, 233, 220);
+}
+.conferencier {
+    display: flex;
+    margin: 50px 20px;
+    gap: 40px;
+    justify-content: space-between;
+}
+.conf-text p{
+    font-size: smaller;
+    color: rgb(191, 191, 194);;
+}
+.conf-img {
+    text-align: center;
+}
+.cercle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    top :-230px;
+}
+.contour {
+    border: 1px solid lightgray;
+    width: 240px;
+    height: 150px; 
+    position: relative;
+    top: 90px;
+}
+.contour-a {
+    position: relative;
+    top: 120px;
+}
+
+@media only screen and (max-width: 779px) {
+    .header, .footer {
+        width: 100%;   
+        height: auto;
+        /*margin: 0 auto;*/
+        /*display: flex;*/
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items:center;
+        /*gap: 10px;*/
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:center; 
+    }
+    /*.item {
+        background-color: var(--cir-dark);
+        font-weight: 700;
+        color: var(--cir-accent);
+        text-align: center;
+    }*/
+    .item1 {
+        width:100%;
+        height: auto;
+        /*font-size: 50px;*/
+        /*line-height: 43px;*/
+        padding: 10px 0;  
+        text-align: center;
+        /*font-weight: 100;*/
+       /* letter-spacing: 1.5px;*/
+      /*  color: var(--cir-light);*/
+    }
+    .item2 {
+        width: 100%;
+        height: auto;
+        /*padding: 5px 0;*/
+        /*line-height: auto;*/
+        padding: 10px 0;
+        text-align: center;
+        font-size: 23px;
+        font-weight: 300;
+        /*padding-right: 5px;*/
+    }
+    .item3 {
+        width: 100%;
+        height: auto;
+        line-height: auto;
+        font-size: 20px;
+        /*font-weight: 400;*/
+        letter-spacing: 0.6px;
+       /* padding-top: 10px;*/
+    }
+    .item3 ul {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+        gap: 5px;   
+    }
+    /*.item3 li, .footermenu li {
+        padding-left: 5px;
+        padding-right: 5px;
+    }*/
+    /*header a, footer a {
+        color: var(--cir-light);
+    }*/
+    /*
+    footer {
+        position:sticky;
+        bottom: 0;
+    }
+    */
+    .footer {
+        height: auto;
+        font-size: 13px;
+        padding-top: 5px;
+        line-height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    /*.copyright {
+        color: var(--cir-accent);
+        font-weight: 400;
+    }*/
+    .footermenu {
+        width:100%;
+        font-size: 20px;
+        /*font-weight: 300;*/
+    }
+    .footermenu ul {
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    .programme, .conferenciers, .venuehtml, .inscription {
+        width: 95%;
+        min-width: 400px;
+        margin: 10px auto ;
+       /* border: 1px;
+        box-shadow: 10px 10px 20px 13px var(--cir-shadow);*/
+        
+    }
+    .soubarre {
+        height: 240px;
+        /*background-image: linear-gradient(to right, var(--cir-barcolor1), var(--cir-barcolor2) );
+        text-align: center;*/
+        padding: 15px;
+        /*color: rgb(220, 229, 227)*/
+        /*color: rgb(226, 228, 233);*/
+    }
+    /*.soubarre h1{
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 50px;
+        color: var(--cir-accent);
+        letter-spacing: -0.2px;
+        margin: 10px;
+    }*/
+    /*.soubarre p{
+        line-height: 25px;
+        font-size: 16px;
+        color: var(--cir-accent);
+        
+    }*/
+    .location{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .adress {
+        width: 100%;
+    }
+    .carte {
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+    }
+    /*.adress a {
+        font-size: 15px;
+        text-decoration: underline;
+    } 
+    .adress p {
+        font-size: 15px;
+        color: rgb(191, 191, 194);
+        font-weight: 400;
+    }
+    */
+    .achat {
+        width: 80%;
+        margin-bottom: 40px;
+        display: block;
+    }
+    
+    .form {
+        display: block;
+        margin: auto 50px;
+    }
+    .form input.btn-ins{
+        margin-bottom: 20px;
+    }
+    .bas {
+        width: 90%;
+        min-width: 400px;
+    }
+    .accueil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-width: 400px;
+
+    }
+    .conferencier {
+        display: flex;
+        flex-direction: column-reverse;     
+        justify-content: space-between;
+    }
+    .conf-img {
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+    }
+    .conf-text{
+        padding-bottom: 20px;
+    }
+}
